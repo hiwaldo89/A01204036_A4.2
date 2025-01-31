@@ -3,6 +3,7 @@
 import sys
 import time
 
+
 def word_count(filename):
     """Function to count words on the file."""
     start_time = time.time()
@@ -16,7 +17,8 @@ def word_count(filename):
                         word_dict[word] += 1
                     else:
                         word_dict[word] = 1
-        sorted_words = sorted(word_dict.items(), key=lambda x: x[1], reverse=True)
+        sorted_words = sorted(
+            word_dict.items(), key=lambda x: x[1], reverse=True)
         results = []
         results.append(f"{'Word':<20}{'Count'}")
         results.append("-" * 30)
@@ -43,6 +45,7 @@ def main():
         sys.exit(1)
     filename = sys.argv[1]
     word_count(filename)
+
 
 if __name__ == "__main__":
     main()

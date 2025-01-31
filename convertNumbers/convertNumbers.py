@@ -3,6 +3,7 @@
 import sys
 import time
 
+
 def to_binary(n, bit_width=10):
     """Converts a number to binary"""
     if n == 0:
@@ -20,6 +21,7 @@ def to_binary(n, bit_width=10):
         elif binary_with_one[i] == '1' and carry == 1:
             binary_with_one[i] = '0'
     return ''.join(binary_with_one)
+
 
 def to_hexadecimal(n, bit_width=32):
     """Converts a number to hexadecimal"""
@@ -41,6 +43,7 @@ def to_hexadecimal(n, bit_width=32):
     hex_value = hex(int(two_complement_binary, 2))[2:].upper()
     return hex_value
 
+
 def convert_numbers(filename):
     """Reads numbers from file, converts them to binary and hexadecimal."""
     start_time = time.time()
@@ -54,7 +57,8 @@ def convert_numbers(filename):
                         number = int(float(line))
                         numbers.append(number)
                     except ValueError:
-                        print(f"Warning: '{line}' is not a valid number and was ignored.")
+                        print(
+                            f"Warning: '{line}' is not a valid number and was ignored.")
         if not numbers:
             print("Error: No valid numbers found in the file.")
             return
@@ -82,6 +86,7 @@ def convert_numbers(filename):
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
 
+
 def main():
     """Main function that handles command-line arguments."""
     if len(sys.argv) != 2:
@@ -90,6 +95,7 @@ def main():
 
     filename = sys.argv[1]
     convert_numbers(filename)
+
 
 if __name__ == "__main__":
     main()

@@ -3,9 +3,11 @@
 import sys
 import time
 
+
 def get_mean(data):
     """Function that returns the mean of a list of numbers"""
     return sum(data) / len(data)
+
 
 def get_median(data):
     """Function that returns the median of a list of numbers"""
@@ -16,6 +18,7 @@ def get_median(data):
         return (sorted_data[mid - 1] + sorted_data[mid]) / 2
 
     return sorted_data[mid]
+
 
 def get_mode(data):
     """Function that returns the mode of a list of numbers"""
@@ -33,13 +36,16 @@ def get_mode(data):
     modes = [key for key, value in frequency.items() if value == max_freq]
     return modes[0] if len(modes) == 1 else modes
 
+
 def get_sd(variance):
     """Function that returns the standard deviation"""
     return variance ** 0.5
 
+
 def get_variance(data, mean):
     """Function that returns the variance"""
     return sum((x - mean) ** 2 for x in data) / (len(data) - 1)
+
 
 def compute_statistics(filename):
     """Function that computes statistics."""
@@ -54,7 +60,7 @@ def compute_statistics(filename):
                     try:
                         valid_data.append(float(line))
                     except ValueError:
-                        invalid_lines.append(line)          
+                        invalid_lines.append(line)
         if invalid_lines:
             print("The following lines contain non-numeric data and were ignored:")
             for line in invalid_lines:
@@ -93,6 +99,7 @@ def compute_statistics(filename):
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
 
+
 def main():
     """Function that checks arguments are passed and executes print_statistics function."""
 
@@ -103,7 +110,6 @@ def main():
     filename = sys.argv[1]
 
     compute_statistics(filename)
-
 
 
 if __name__ == "__main__":
