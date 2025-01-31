@@ -1,0 +1,9 @@
+Statistic           Value
+------------------------------
+Count               400
+Mean                242.32
+Median              239.50
+Mode                [393.0, 170.0]
+Standard Deviation  145.44
+Variance            21152.80
+Elapsed Time (s)    0.0024
